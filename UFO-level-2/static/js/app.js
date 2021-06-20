@@ -1,5 +1,6 @@
 var currFilter = {}
 
+// Filter data function
 function filterData() {
     var currchange = d3.select(this)
     var filterName = currchange.attr("id")
@@ -16,6 +17,7 @@ function filterData() {
     tablebuilder(filteredData)
 }
 
+// Table builder function
 function tablebuilder(tabledata) {
     var tbody = d3.select("tbody")
     tbody.text("")
@@ -28,5 +30,6 @@ function tablebuilder(tabledata) {
     });
 }
 
+// Main code
 tablebuilder(data)
 d3.selectAll("input").on("change", filterData)
